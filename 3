@@ -1,0 +1,27 @@
+public class Punt{
+	private int id;
+	private int x;
+	private int y;
+	private Linia l;
+	private Area a;
+	
+	public Punt (Linia ln){         
+		this.l = ln;
+		
+	}
+	
+	public Punt (Area an){
+		this.a = an;
+	}
+
+}
+
+public class Area{
+	private int id;
+	private Punt punto;
+}
+
+public class Linia{
+	private int id;
+	private Punt puntos;
+}
