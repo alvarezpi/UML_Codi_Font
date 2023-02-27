@@ -2,31 +2,17 @@ public class Person{
 	private String Name;
 	private Int Phone_Number;
 	private String Email_Address;
-	private Address address;
-	private Address_Book addressb;
+	private ArrayList <Address> address;
+	private ArrayList <Address_Book> addressb;
 	
 	public String getPurchase(){
 		return purchase;
 	}
+}
 	
 	public class Address_Book{
 		public int Code;
 		private ArrayList <Person> person;
-	}
-	
-	public class Country {
-		private Int id;
-		private String name;
-	}
-	
-	public class State{
-		private Int Id;
-		private String Name;
-		private Country c;
-		
-		public State(Country cal){
-			this.c = cal;
-		}
 	}
 	
 	public class Address{
@@ -34,10 +20,29 @@ public class Person{
 		private String City;
 		private Int Postal_Code;
 		private ArrayList <Person> person;
+		private Person lives_at;
 		
-		private State s;
+		}
 		
-		public Address (State san){
-			this.s = san;
+		public class State{
+		private Int Id;
+		private String Name;
+		private Address a;
+		
+		public State(Address ar){
+			this.a= ar;
 		}
 	}
+		
+	public class Country {
+		private Int id;
+		private String name;
+		private State s;
+		
+		public Country(State st){
+			this.s = st;
+	}
+	
+	
+	}
+	
